@@ -1,6 +1,6 @@
 /*
- * Authoe: Prathviraj Billava
  * Simple Unix Like shell written in C++
+ * Author: Prathviraj Billava
  * 
  * functions.h : header file for commmand.cpp
  *

@@ -1,9 +1,8 @@
 /*
- * Code Owner: Prathviraj Billava
- * 
  * Simple Unix Like shell written in C++
+ * Author: Prathviraj Billava
  *
- * command.cpp :  Implements the functions from the command class
+ * command.cpp :  command class member function definitions
  *
  */
 

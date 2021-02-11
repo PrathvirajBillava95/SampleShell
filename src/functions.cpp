@@ -1,9 +1,8 @@
 /*
- * Code Owner: Prathviraj Billava
- * 
  * Simple Unix Like shell written in C++
+ * Author: Prathviraj Billava
  *
- * functions.cpp : helper functions
+ * functions.cpp : helper function definitions
  * 
  */
 

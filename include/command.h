@@ -1,9 +1,8 @@
 /*
- * Code Owner: Prathviraj Billava
- * 
  * Simple Unix Like shell written in C++
+ * Author: Prathviraj Billava
  * 
- * command.h : header file for commmand.cpp
+ * command.h : header file of commmand.cpp
  *
  * command class and its members
  *
@@ -26,7 +25,7 @@ using namespace std;
 class command 
 {
 private:
-	string cmdArgs[MAXARGS];		// stores the normal command argumants
+	string cmdArgs[MAXARGS];		// stores the normal (non-pip) command argumants
 	string pipeCmdArgs[MAXARGS];		// stores the single pipe command arguments
 public:
 	bool bPipe= false; 			// flag to denote whether the command is a normal one or has pipe

@@ -1,7 +1,6 @@
 /*
- * Code Owner: Prathviraj Billava
- * 
  * Simple Unix Like shell written in C++
+ * Author: Prathviraj Billava
  *
  * main.cpp : main function file
  *
