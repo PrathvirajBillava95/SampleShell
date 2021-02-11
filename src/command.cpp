@@ -1,6 +1,20 @@
+/*
+ * Code Owner: Prathviraj Billava
+ * 
+ * Simple Unix Like shell written in C++
+ *
+ * command.cpp :  Implements the functions from the command class
+ *
+ */
+
 #include "command.h"
 #include "functions.h"
 
+/*
+ * void command::parseCommand()
+ * Parse the command string and split it 
+ * into command and arguments
+ */
 void command::parseCommand()
 {
 	int pipe;
@@ -21,10 +35,14 @@ void command::parseCommand()
         }
 }
 
+/*
+ * void command::exec()
+ * Execute the normal (non-piped) command
+ */
 void command::exec()
 {
         if(cmdArgs[0].substr(0,5) != "/home") {
-                cmdArgs[0] = "/bin/"+cmdArgs[0];
+                cmdArgs[0] = "/bin/"+cmdArgs[0]; 	// append /bin to the command
         }
 
         char *cmd[MAXARGS]={};
@@ -47,6 +65,10 @@ void command::exec()
         }
 }
 
+/*
+ * void command::execPiped()
+ * Execute the single pipe command
+ */
 void command::execPiped()
 {
         pid_t pid1, pid2;
@@ -54,11 +76,11 @@ void command::execPiped()
         char *cmd1[MAXARGS]={}, *cmd2[MAXARGS]={};
 
         if(cmdArgs[0].substr(0,5) != "/home") {
-                cmdArgs[0] = "/bin/"+cmdArgs[0];
+                cmdArgs[0] = "/bin/"+cmdArgs[0];	// append /bin to the command
         }
 
         if(pipeCmdArgs[0].substr(0,5) != "/home") {
-                pipeCmdArgs[0] = "/bin/"+pipeCmdArgs[0];
+                pipeCmdArgs[0] = "/bin/"+pipeCmdArgs[0];	// append /bin to the command
         }
 
         for(int i = 0 ;i < MAXARGS ;i++){

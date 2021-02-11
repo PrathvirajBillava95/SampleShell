@@ -1,7 +1,22 @@
+/*
+ * Code Owner: Prathviraj Billava
+ * 
+ * Simple Unix Like shell written in C++
+ *
+ * functions.cpp : helper functions
+ * 
+ */
+
 #include <string>
+#include <bits/stdc++.h>
 using namespace std;
 #include "functions.h"
 
+/*
+ * int CheckIfPipeCmd(string str)
+ * Checks if the command sting str is a piped command
+ * and returns the location of pipe (|)
+ */
 int CheckIfPipeCmd(string str)
 {
         int findPipe = str.find('|', 0);
@@ -9,19 +24,17 @@ int CheckIfPipeCmd(string str)
 	return findPipe;
 }
 
+/*
+ * void splitSpace(string str, string *parsedCmd)
+ * Splits the string str by the spaces and stores the 
+ * splited words in parsedCmd
+ *
+ */
 void splitSpace(string str, string *parsedCmd)
 {
-        int i=0;
-        size_t prev, curr;
+	istringstream ss(str);
 
-        prev = 0;
-        curr = str.find(' ', prev);
+	int i=0;
 
-        while(curr != std::string::npos) {
-                parsedCmd[i++] = str.substr(prev, curr-prev);
-                prev = curr + 1;
-                curr = str.find(' ', prev);
-        }
-        parsedCmd[i] = str.substr(prev, curr-prev);
-
+	while (ss >> parsedCmd[i++]);
 }

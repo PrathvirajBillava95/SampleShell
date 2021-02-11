@@ -1,3 +1,14 @@
+/*
+ * Code Owner: Prathviraj Billava
+ * 
+ * Simple Unix Like shell written in C++
+ * 
+ * command.h : header file for commmand.cpp
+ *
+ * command class and its members
+ *
+ */
+
 #ifndef __COMMAND_CLASS_H__
 #define __COMMAND_CLASS_H__
 
@@ -15,13 +26,13 @@ using namespace std;
 class command 
 {
 private:
-	string cmdArgs[MAXARGS];
-	string pipeCmdArgs[MAXARGS];
+	string cmdArgs[MAXARGS];		// stores the normal command argumants
+	string pipeCmdArgs[MAXARGS];		// stores the single pipe command arguments
 public:
-	bool bPipe= false;
-	string command;
-	void parseCommand();
-	void exec();
-	void execPiped();
+	bool bPipe= false; 			// flag to denote whether the command is a normal one or has pipe
+	string command;				// stored the whole command string
+	void parseCommand();			// Parse the command string and split it into command and arguments
+	void exec();				// execute the normal (non-pipe) command
+	void execPiped();			// execute the single pipe command
 };
 #endif
