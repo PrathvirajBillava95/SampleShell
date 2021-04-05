@@ -3,6 +3,7 @@ Simple Shell in C++, The program communicates with the underlying Operating Syst
 
 # Directories
 src/ : source code
+
 include/: header files
 
 # Steps to compile
